@@ -1,0 +1,15 @@
+FROM mongo:4.4.6
+MAINTAINER Jim Liang <alfredtofu@gmail.com>
+
+RUN apt-get update && \
+    apt-get install -y cron && \
+    rm -rf /var/lib/apt/lists/*
+
+ADD backup.sh /backup.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh && chmod +x /backup.sh
+
+VOLUME /backup
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD [""]
