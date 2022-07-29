@@ -13,10 +13,10 @@ fi
 echo "run command: $cmd"
 
 
-FILE="$TARGET_FOLDER/backup-$DATE.tar.gz"
+TARGET_FOLDER="/backup/$DATE"
 
 mkdir -p "$TARGET_FOLDER"
-$cmd --archive="$FILE"
-echo "Mongo dump saved to $FILE"
+$cmd -o $TARGET_FOLDER
+echo "Mongo dump saved to $TARGET_FOLDER"
 
 echo "Job finished: $(date)"
