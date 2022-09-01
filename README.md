@@ -3,6 +3,8 @@ istepanov/mongodump
 
 Docker image with `mongodump`, `cron` and AWS CLI to upload backups to AWS S3.
 
+To define the time you can provide concrete values for minute (m), hour (h), day of month (dom), month (mon), and day of week (dow) or use '*' in these fields (for 'any').
+
 ### Environment variables
 
 | Env var               | Description | Default                 |
